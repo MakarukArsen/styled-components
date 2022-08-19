@@ -39,7 +39,7 @@ const SignIn = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        if (email === userData.email && password === userData.password) {
+        if (email === userData?.email && password === userData?.password) {
             if (rememberMe) {
                 userData.autoLogin = true;
                 localStorage.setItem("user", JSON.stringify(userData));
@@ -51,6 +51,7 @@ const SignIn = () => {
         } else {
             alert("такого користувача неіснує, створіть акаунт");
         }
+        return;
     };
 
     return (
